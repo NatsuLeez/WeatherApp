@@ -1,9 +1,5 @@
 package com.example.weatherapp
 
-import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.Query
-
 data class WeatherData (
     val coord: Coord,
     val weather: List<Weather>,
