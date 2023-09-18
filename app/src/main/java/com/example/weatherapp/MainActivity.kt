@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        val lat = 37.7749 // Replace with your latitude
-        val lon = -122.4194 // Replace with your longitude
+        val lat = 48.553919 // Replace with your latitude
+        val lon = 7.73667039 // Replace with your longitude
         val apiKey = "c15216721e16bfe86a214c4dec3f5abe"
 
         weatherApiClient = WeatherApiClient()
@@ -39,8 +39,10 @@ class MainActivity : AppCompatActivity() {
                     val weatherData = response.body()
                     if (weatherData != null) {
                         val temperature = weatherData.main.temp
-                        val weatherAct = weatherData.weather[0].main
-                        val weatherText = "Today there is $weatherAct"
+                        val descWeatherAct = weatherData.weather[0].description
+                        val humidityAct = weatherData.main.humidity
+                        val windSpeed = weatherData.wind.speed
+                        val weatherText = "Today there is a $descWeatherAct the humidity is $humidityAct %, the wind is $windSpeed m/s"
                         val temperatureCels = temperature- 273.15
                         val temperatureText = "$weatherText with a temperature of ${f.format(temperatureCels)} °C\n"
                         myTextView.text = temperatureText

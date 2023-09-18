@@ -8,7 +8,7 @@ data class WeatherData (
     val coord: Coord,
     val weather: List<Weather>,
     val main: Main,
-    val name: String
+    val wind: Wind
 )
 
 data class Coord(
@@ -25,8 +25,14 @@ data class Weather(
 
 data class Main(
     val temp: Double,
-    val pressure: Int,
-    val humidity: Int,
     val temp_min: Double,
-    val temp_max: Double
+    val temp_max: Double,
+    val pressure: Int,
+    val humidity: Int
+)
+
+data class Wind(
+    val speed: Double,
+    val deg: Int,
+    val gust: Double
 )
